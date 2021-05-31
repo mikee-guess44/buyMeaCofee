@@ -7,8 +7,6 @@ import React, { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux';
 import { Redirect, useLocation, useParams } from 'react-router'
 import Loader from './Loader';
-axios.defaults.headers.common['Access-Control-Allow-Origin'] = '*';
-
 
 export default function ProfilePage() {
 

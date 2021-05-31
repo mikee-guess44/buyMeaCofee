@@ -6,9 +6,6 @@ import { useSelector } from "react-redux";
 import { Redirect } from "react-router";
 import ConnectButton from "./ConnectButton";
 import Loader from "./Loader";
-axios.defaults.headers.common['Access-Control-Allow-Origin'] = '*';
-
-
 const reader = (e, setAvatar) => {
     const fileInput = e.target.files[0]
     const fr = new FileReader();
