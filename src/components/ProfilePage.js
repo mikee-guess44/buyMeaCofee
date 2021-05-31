@@ -83,6 +83,7 @@ export default function ProfilePage() {
                                         <Text>Buy a Cofee: {count}</Text>
                                         <Button onClick={() => setCount(count + 1)}>+</Button>
                                         <Button onClick={() => setCount(count - 1)}>-</Button>
+                                        <Text>1 coffee is worth $ 3</Text>
                                     </Box>
                                     <Box align='center' justify='center' gap='medium' pad='medium'>
                                         <Select
