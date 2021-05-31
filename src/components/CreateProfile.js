@@ -6,7 +6,6 @@ import { useSelector } from "react-redux";
 import { Redirect } from "react-router";
 import ConnectButton from "./ConnectButton";
 import Loader from "./Loader";
-axios.defaults.headers.common['Access-Control-Allow-Origin'] = '*';
 
 
 const reader = (e, setAvatar) => {
@@ -30,7 +29,11 @@ const postRequest = async (form, ava) => {
         }
     })
 
-    const result = await axios.post('https://buymeacoffee.eu-4.evennode.com/', formDataParsed)
+    const result = await axios.post('https://buymeacoffee.eu-4.evennode.com/', formDataParsed, {
+        headers: { 
+        "Content-Type": "application/multipart/form-data",
+        'Access-Control-Allow-Origin': '*'
+      }})
     return result
 
 }
