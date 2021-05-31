@@ -78,7 +78,7 @@ export default function ProfilePage() {
                                     <Text>You are viewing your profile, soon you will be able to edit your profile data from here ...</Text>
                                 </Box>
                             ) : (
-                                <Box align='center' elevation='medium' justify='center' gap='medium' background='light-1 ' pad='medium'>
+                                <Box elevation='medium' justify='center' gap='medium' background='dark-1' pad='xlarge'>
                                     <Box direction='row' align='center' justify='center' gap='medium' pad='medium'>
                                         <Text>Buy a Cofee: {count}</Text>
                                         <Button onClick={() => setCount(count + 1)}>+</Button>
@@ -91,11 +91,11 @@ export default function ProfilePage() {
                                             value={value}
                                             onChange={({ option }) => option === 'ETH' ? setValue(option) : setValue('ETH')}
                                         />
-                                        <Button onClick={() => {
+                                        <Button primary color="brand" onClick={() => {
                                             const amount = (count * 3 / ethPrice).toString()
                                             sendTransaction({ to: data.address, value: utils.parseEther(amount) })
                                             setShow(true)
-                                        }}>Send</Button>
+                                        }} label='Send' />
                                     </Box>
                                 </Box>
                             )}
