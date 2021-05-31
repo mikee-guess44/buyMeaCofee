@@ -36,7 +36,7 @@ export default function ProfilePage() {
 
     useEffect(() => {
 
-        axios.get(`https://buymeacoffee.eu-4.evennode.com/profile/${userId}`).then((result) => {
+        axios.get(`http://buymeacoffee.eu-4.evennode.com/profile/${userId}`).then((result) => {
             if (result.status === 200) {
                 console.log(result.data);
                 setData(result.data.user)
