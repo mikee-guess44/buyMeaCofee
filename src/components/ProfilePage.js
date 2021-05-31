@@ -7,7 +7,7 @@ import React, { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux';
 import { Redirect, useLocation, useParams } from 'react-router'
 import Loader from './Loader';
-
+axios.defaults.headers.common['Access-Control-Allow-Origin'] = '*';
 
 
 export default function ProfilePage() {
@@ -29,14 +29,20 @@ export default function ProfilePage() {
     }, [state])
 
     useEffect(() => {
-        axios.get('https://api.coingecko.com/api/v3/simple/price?ids=ethereum&vs_currencies=usd').then((data) => {
+        axios.get('https://api.coingecko.com/api/v3/simple/price?ids=ethereum&vs_currencies=usd', {
+            withCredentials: true,
+            // put the rest of your config here
+        }).then((data) => {
             setEthPrice(data.data.ethereum.usd);
         })
     }, [ethPrice])
 
     useEffect(() => {
 
-        axios.get(`https://buymeacoffee.eu-4.evennode.com/profile/${userId}`).then((result) => {
+        axios.get(`https://buymeacoffee.eu-4.evennode.com/profile/${userId}`, {
+            withCredentials: true,
+            // put the rest of your config here
+        }).then((result) => {
             if (result.status === 200) {
                 console.log(result.data);
                 setData(result.data.user)
