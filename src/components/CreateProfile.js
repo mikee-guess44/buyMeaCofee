@@ -6,6 +6,9 @@ import { useSelector } from "react-redux";
 import { Redirect } from "react-router";
 import ConnectButton from "./ConnectButton";
 import Loader from "./Loader";
+axios.defaults.headers.common['Access-Control-Allow-Origin'] = '*';
+
+
 const reader = (e, setAvatar) => {
     const fileInput = e.target.files[0]
     const fr = new FileReader();
@@ -27,10 +30,7 @@ const postRequest = async (form, ava) => {
         }
     })
 
-    const result = await axios.post('https://buymeacoffee.eu-4.evennode.com/', formDataParsed, {
-        withCredentials: true,
-        // put the rest of your config here
-    })
+    const result = await axios.post('https://buymeacoffee.eu-4.evennode.com/', formDataParsed)
     return result
 
 }
