@@ -5,6 +5,7 @@ export const mainSlice = createSlice({
     initialState: {
         address: null,
         isConnected: false,
+        etherBalance: 0
     },
     reducers: {
         setAddress: (state, action) => {
@@ -13,10 +14,14 @@ export const mainSlice = createSlice({
         setStatus: (state, action) => {
             state.isConnected = action.payload
         },
+        setBalance: (state, action) => {
+            state.etherBalance = action.payload
+        },
+    
     },
 })
 
-export const { setAddress, setStatus} = mainSlice.actions
+export const { setAddress, setStatus, setBalance} = mainSlice.actions
 
 export default mainSlice.reducer
 

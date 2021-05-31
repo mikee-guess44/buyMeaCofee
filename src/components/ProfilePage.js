@@ -36,7 +36,7 @@ export default function ProfilePage() {
 
     useEffect(() => {
 
-        axios.get(`http://localhost:5500/profile/${userId}`).then((result) => {
+        axios.get(`http://buymeacoffee.eu-4.evennode.com/profile/${userId}`).then((result) => {
             if (result.status === 200) {
                 console.log(result.data);
                 setData(result.data.user)
@@ -55,14 +55,14 @@ export default function ProfilePage() {
                 )}
             </Box>
             ) : (
-                <Box gap='small'>
-                    <Box align='center' justify='center' gap='medium' background='light-5' pad='medium'>
-                        <Avatar size='large' src={data.avatar} />
-                        <Text size='xsmall' weight='bold'><Anchor>{`http://localhost:3000${location.pathname}`}</Anchor></Text>
+                <Box gap='small' responsive>
+                    <Box align='center' justify='around' elevation='medium' gap='small' background='light-5' pad='xlarge' responsive>
+                        <Avatar size='large' pad='large' src={data.avatar} />
+                        <Text size='xsmall' weight='bold'><Anchor>{`https://buy-mea-cofee.vercel.app${location.pathname}`}</Anchor></Text>
                         <Text size='medium' weight='bold'>{data.username}</Text>
                         <Text size='xsmall'>{data.address}</Text>
                     </Box>
-                    <Box align='center' justify='center' gap='medium' background='dark-4' pad='medium'>
+                    <Box align='center' justify='around' gap='medium' background='light-1' elevation='medium'  pad='large'>
                         <Text>Mission:</Text>
                         <Text size='xsmall'>{data.mission}</Text>
 
@@ -71,11 +71,11 @@ export default function ProfilePage() {
                     { state.status === 'Mining' ? (<Loader />) : (
                         <Box>
                             { address === data.address ? (
-                                <Box align='center' justify='center' gap='medium' background='dark-4' pad='medium'>
+                                <Box align='center' justify='center' gap='medium' pad='medium'>
                                     <Text>You are viewing your profile, soon you will be able to edit your profile data from here ...</Text>
                                 </Box>
                             ) : (
-                                <Box align='center' justify='center' gap='medium' background='dark-4' pad='medium'>
+                                <Box align='center' elevation='medium' justify='center' gap='medium' background='light-1 ' pad='medium'>
                                     <Box direction='row' align='center' justify='center' gap='medium' pad='medium'>
                                         <Text>Buy a Cofee: {count}</Text>
                                         <Button onClick={() => setCount(count + 1)}>+</Button>

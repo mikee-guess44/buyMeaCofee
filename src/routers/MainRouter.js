@@ -21,7 +21,7 @@ export const MainRouter = () => {
                 <Route exact path='/contact' component={Contact} />
                 <Route exact path='/make' component={CreateProfile} />
                 <Route exact path='/' component={Home} />
-                <Route path='/profile/:username' component={ProfilePage} />
+                <Route path='/profile/:userId' component={ProfilePage} />
                 <Route path='*' component={NotFound} />
             </Switch>
             </Box>

@@ -1,10 +1,11 @@
 import axios from "axios";
-import { Avatar, Box, Button, FileInput, Form, Select, Text, TextArea, TextInput, Spinner } from "grommet";
+import { Avatar, Box, Button, FileInput, Form, Select, Text, TextArea, TextInput } from "grommet";
 import { User } from "grommet-icons";
 import { useState } from "react";
 import { useSelector } from "react-redux";
 import { Redirect } from "react-router";
 import ConnectButton from "./ConnectButton";
+import Loader from "./Loader";
 
 const reader = (e, setAvatar) => {
     const fileInput = e.target.files[0]
@@ -27,7 +28,7 @@ const postRequest = async (form, ava) => {
         }
     })
 
-    const result = await axios.post('http://localhost:5500/', formDataParsed)
+    const result = await axios.post('http://buymeacoffee.eu-4.evennode.com/', formDataParsed)
     return result
 
 }
@@ -91,9 +92,7 @@ export default function CreateProfile() {
                     { loadingPost ? (
                         <Box>
                             { submitedForm ?  (<Redirect to={`/profile/${userData.userId}`} />) :
-                            <Box flex align='center' justify='center' margin={{top: 'large'}}>
-                                <Spinner size='large'/>
-                            </Box>
+                            <Loader />
                             }
                         </Box>
                     ) : (
