@@ -1,5 +1,5 @@
 import { Anchor, Box, Heading } from "grommet"
-import { Home } from "grommet-icons"
+import { Home, Java } from "grommet-icons"
 import { NavLink } from "react-router-dom"
 import ConnectButton from "./ConnectButton"
 
@@ -28,7 +28,7 @@ const HomeLink = () => {
 export default function NavComponent() {
     return (
         <NavBar>
-            <Heading level='4' margin='none'>My App</Heading>
+            <Heading level='4' margin='none' ><Java />{'   '}buyMeaCoffee</Heading>
             <Anchor as={HomeLink} />
             <ConnectButton />
         </NavBar>

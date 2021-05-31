@@ -2694,10 +2694,10 @@
     "@typescript-eslint/types" "4.25.0"
     eslint-visitor-keys "^2.0.0"
 
-"@usedapp/core@0.3.17":
-  version "0.3.17"
-  resolved "https://registry.yarnpkg.com/@usedapp/core/-/core-0.3.17.tgz#c1ca5a5899fa32e956675a8eb5600edf861452ec"
-  integrity sha512-oYWKe7dtEBdWwOaDC1baMdj7Zqyk078KyvjFqVsFszEU8Z1cu0f0ioHgMH6IAgI6seeHOvyg/euKKcHz4zfOAg==
+"@usedapp/core@0.3.20":
+  version "0.3.20"
+  resolved "https://registry.yarnpkg.com/@usedapp/core/-/core-0.3.20.tgz#7745b3aff6ea698ac8d920473a3e9f9c50190c1b"
+  integrity sha512-6vedEZOZYt/yaHe5LkrUIfrzTnOsy9Ra6D4bLCBXRBsjS5n4/20I2GPlsBdIgqgt8/JfRQBTUWuyJQ4E8cTnzw==
   dependencies:
     "@types/react" "17.0.1"
     "@web3-react/core" "6.1.1"
