@@ -30,7 +30,7 @@ const postRequest = async (form, ava) => {
         }
     })
 
-    const result = await axios.post('http://buymeacoffee.eu-4.evennode.com/', formDataParsed)
+    const result = await axios.post('https://buymeacoffee.eu-4.evennode.com/', formDataParsed)
     return result
 
 }
